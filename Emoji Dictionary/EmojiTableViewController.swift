@@ -10,7 +10,7 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀","🥑","💩","🇨🇦","♥️","🏎", "🍳", "🥘"]
+    var emojis = ["😀","🥑","💩","🇨🇦","♥️","🏎", "🍳", "🥘", "🕌"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,7 @@ class EmojiTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //generate a list based on total count of emojis
         return emojis.count
     }
 
@@ -44,10 +45,8 @@ class EmojiTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //constant to store emoji view controller
         let emojiDefVC = segue.destination as! EmojiDefinitionViewController
         
-        //testing output of emoji passed via segue to view controller
         emojiDefVC.emoji = sender as! String
     }
 
