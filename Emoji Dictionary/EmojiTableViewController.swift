@@ -10,10 +10,12 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
-    var emojis = ["😀","🥑","💩","🇨🇦","♥️","🏎", "🍳", "🥘", "🕌"]
+    var emojis : [Emoji] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emojis = createEmojis()
         
     }
 
@@ -26,7 +28,7 @@ class EmojiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
-        cell.textLabel?.text = emojis[indexPath.row]
+        cell.textLabel?.text = emojis[indexPath.row].emojiType
         
         return cell
     }
@@ -39,15 +41,30 @@ class EmojiTableViewController: UITableViewController {
         //the steps performed in the segue
         //sender is where we pass the actual emoji stored in the array
         performSegue(withIdentifier: "ourSegue", sender: emoji)
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let emojiDefVC = segue.destination as! EmojiDefinitionViewController
+        emojiDefVC.emoji = sender as! Emoji
+    }
+    
+    //placeholder for creating new emojis
+    func createEmojis() -> [Emoji]
+    {
+        let smiley = Emoji()
+        smiley.emojiType = "😀"
+        smiley.emojiDefinition = "A happy Smiley face"
+        smiley.emojiCategoryType = "Emotions"
+        smiley.emojiReleaseYear = 2010
         
-        emojiDefVC.emoji = sender as! String
+        let avocado = Emoji()
+        avocado.emojiType = "🥑"
+        avocado.emojiDefinition = "A ripe, green Avocado"
+        avocado.emojiCategoryType = "Food"
+        avocado.emojiReleaseYear = 2017
+        
+        return [smiley, avocado]
     }
 
 }

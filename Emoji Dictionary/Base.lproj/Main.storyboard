@@ -59,6 +59,18 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A racecar sponsored by Swift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY6-NF-7De">
                                 <rect key="frame" x="15" y="631" width="345" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZh-38-CwD">
+                                <rect key="frame" x="91.5" y="590" width="191.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year: 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGu-gl-N3o">
+                                <rect key="frame" x="126" y="548" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,13 +80,19 @@
                         <constraints>
                             <constraint firstItem="Gdq-Il-v8q" firstAttribute="centerX" secondItem="dy7-4L-DD8" secondAttribute="centerX" id="AMJ-eT-VHW"/>
                             <constraint firstItem="EHe-dh-rgJ" firstAttribute="trailing" secondItem="XY6-NF-7De" secondAttribute="trailing" constant="15" id="Es9-2V-DSk"/>
+                            <constraint firstItem="JZh-38-CwD" firstAttribute="top" secondItem="lGu-gl-N3o" secondAttribute="bottom" constant="21" id="VcT-qf-aXB"/>
                             <constraint firstItem="EHe-dh-rgJ" firstAttribute="bottom" secondItem="XY6-NF-7De" secondAttribute="bottom" constant="15" id="hlF-Fa-K7e"/>
                             <constraint firstItem="XY6-NF-7De" firstAttribute="leading" secondItem="EHe-dh-rgJ" secondAttribute="leading" constant="15" id="j8r-45-whC"/>
                             <constraint firstItem="Gdq-Il-v8q" firstAttribute="top" secondItem="EHe-dh-rgJ" secondAttribute="top" constant="20" id="lO6-m2-vXt"/>
+                            <constraint firstItem="lGu-gl-N3o" firstAttribute="centerX" secondItem="dy7-4L-DD8" secondAttribute="centerX" id="ndv-Ld-TOY"/>
+                            <constraint firstItem="JZh-38-CwD" firstAttribute="centerX" secondItem="dy7-4L-DD8" secondAttribute="centerX" id="nzq-JR-YSz"/>
+                            <constraint firstItem="XY6-NF-7De" firstAttribute="top" secondItem="JZh-38-CwD" secondAttribute="bottom" constant="20" id="rqn-AK-FWv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EHe-dh-rgJ"/>
                     </view>
                     <connections>
+                        <outlet property="birthLabel" destination="lGu-gl-N3o" id="D9d-E9-GEI"/>
+                        <outlet property="categoryLabel" destination="JZh-38-CwD" id="9rI-v5-3Td"/>
                         <outlet property="emojiDefinitionLabel" destination="XY6-NF-7De" id="g6F-WS-qHd"/>
                         <outlet property="emojiLabel" destination="Gdq-Il-v8q" id="WM3-xC-gDQ"/>
                     </connections>
